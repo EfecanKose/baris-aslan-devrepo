@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <h2>Post Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script>
+        {% if messages %}
+            {% for message in messages %}
+                toastr.{{ message.tags }}('{{ message }}');
+            {% endfor %}
+        {% endif %}
+    </script>
+{% endblock %}

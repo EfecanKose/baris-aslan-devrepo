@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+
+{% block extra_css %}
+{{ form.media }}
+{% endblock %}
+{% block body %}
+
+
+    <div class="container" id="form-top">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Form</h1>
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+
+                    <input class="btn btn-primary" type="submit" value="Post Oluştur">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

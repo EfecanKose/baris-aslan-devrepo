@@ -1,0 +1,139 @@
+{% extends 'base/datatables_base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box page-title-box-alt">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h4 class="header-title">Buttons example</h4>
+                            <p class="sub-header">
+                                The Buttons extension for DataTables provides a common set of options, API methods and
+                                styling to display buttons on a page
+                                that will interact with a DataTable. The core library provides the based framework upon
+                                which plug-ins can built.
+                            </p>
+
+                            <table id="my-table" class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>isim</th>
+                                    <th>Başlık</th>
+                                    <th>Açıklama</th>
+                                    <th>Tarih</th>
+                                    <th>Yayınevi</th>
+                                    <th>Onay</th>
+
+
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+
+
+                                </tbody>
+                            </table>
+
+                        </div> <!-- end card body-->
+                    </div> <!-- end card -->
+                </div><!-- end col-->
+            </div>
+        </div> <!-- end card -->
+    </div><!-- end col-->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/b-2.3.6/b-html5-2.3.6/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#my-table').DataTable({
+                // DataTable düğmelerini etkinleştirin
+
+                // Sunucu tarafında işleme yapılacağını belirtin
+                serverSide: true,
+                // Verileri almak için AJAX isteği yapın
+                ajax: {
+                    url: 'data/', // veri kaynağı URL'si
+                },
+                // Sayfa başına öğe sayısını ayarlayın
+                pageLength: 10,
+                // Sayfa başına öğe sayısı seçeneklerini belirtin
+                lengthMenu: [10, 25, 50, 100, 200],
+                // Sütunlarınızı belirtin ve veri kaynağındaki özelliklerle eşleştirin
+                columns: [
+                    {data: 'username'},
+                    {data: 'title'},
+                    {
+                        data: 'content',
+                        render: function (data, type, row) {
+                            var maxChar = 15; // maximum karakter sayısı
+                            var truncated = data.substr(0, maxChar);
+                            return truncated + (data.length > maxChar ? ' ...' : '');
+                        }
+                    },
+                    {
+                        data: 'publishing_date',
+                        render: function (data, type, row) {
+                            var date = new Date(data);
+                            var options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+                            return date.toLocaleDateString('tr-TR', options);
+                        }
+                    },
+                    {
+                        data: 'yayin'
+                    },
+                    {
+                        data: 'onay',
+                        render: function (data, type, row) {
+                            var statusText = '';
+                            var statusColor = '';
+                            if (data === true) {
+                                statusText = 'Onaylandı';
+                                statusColor = 'text-success';
+                            } else if (data === false) {
+                                statusText = 'Reddedildi';
+                                statusColor = 'text-danger';
+                            }
+                            return '<span class="' + statusColor + '">' + statusText + '</span>';
+                        }
+                    }
+                ],
+            });
+            // DataTable düğmelerini tablonun üzerine yerleştirin
+            table.buttons().container().appendTo('#my-table_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+
+
+
+
+
+{% endblock %}

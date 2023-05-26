@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Django Dersleri{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+
+    <link href="{% static '/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/materialdesignicons.min.css' %}"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/html.css' %}"/>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/pe-icon-7-stroke.css' %}"/>
+
+    <link href="{% static '/assets/css/material/bootstrap.min.css' %}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+		<link href="{% static '/assets/css/material/app.min.css' %}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'custom/position.css' %}"/>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'custom/footer.css' %}"/>
+
+{% block lib_css %}
+
+{% endblock %}
+
+
+
+    <link href="{% static '/assets/css/material/bootstrap.min.css' %}" rel="stylesheet" type="text/css"
+          id="bs-default-stylesheet"/>
+
+
+
+{#NAVBAR CSS#}
+
+
+	<link href="{% static '/assets/css/material/bootstrap.min.css' %}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+		<link href="{% static '/assets/css/material/app.min.css' %}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+		<link href="{% static '/assets/css/material/bootstrap-dark.min.css' %}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+		<link href="{% static '/assets/css/material/app-dark.min.css' %}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+
+
+		<link href="{% static '/assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <script src="{% static 'custom/footer.css' %}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% block extra_css %}
+
+    {% endblock %}
+
+</head>
+<body>
+
+
+{% include "partials/header.html" %}
+
+
+
+
+
+
+
+
+
+{% block body %}
+
+{% endblock %}
+
+
+<script src="{% static '/assets/js/vendor.min.js' %}"></script>
+
+<!-- third party js -->
+{% block libs_js %}
+
+{% endblock %}
+<!-- third party js ends -->
+
+
+
+
+<!-- App js -->
+<script src="{% static '/assets/js/app.min.js' %}"></script>
+
+
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+
+<!-- counter js -->
+<script src="{% static 'assets/js/counter.init.js' %}"></script>
+
+<!-- custom js -->
+<script src="{% static 'assets/js/app.js' %}"></script>
+
+
+<script src="{% static 'js/html.js' %}"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- NAVBAR JAVA SCRİPTS -->
+
+        <script src="{% static '/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+
+        <script src="{% static '/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js' %}"></script>
+
+        <script src="{% static '/assets/js/pages/dashboard-sales.init.js' %}"></script>
+
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+
+        <!-- END NAVBAR  -->
+
+
+
+
+
+

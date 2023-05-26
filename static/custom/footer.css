@@ -1,0 +1,12 @@
+.ec-navbar-custom{
+    position: static !important;
+    top: 0 !important;
+    width: 100% !important;
+    background-color: #4573c5 !important; /* navbar rengi */
+    z-index: 9999 !important; /* diğer elementlerden üstte olması için */
+}
+
+
+
+
+
